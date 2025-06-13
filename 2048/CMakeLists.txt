@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.20.0)
+add_executable(2048_test 2048.cpp test.cpp)
+target_link_libraries(2048_test PUBLIC doctest default)
+add_test(NAME 2048_test COMMAND 2048_test --force-colors -d)
+add_custom_target(cloud-test COMMAND 2048_test --force-colors -d)
