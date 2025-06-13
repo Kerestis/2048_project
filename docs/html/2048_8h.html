@@ -1,0 +1,535 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>2048: Файл 2048/2048.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">2048
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('2048_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Функции</a> &#124;
+<a href="#var-members">Переменные</a>  </div>
+  <div class="headertitle"><div class="title">Файл 2048.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Заголовочный файл для консольной игры 2048.  
+<a href="#details">Подробнее...</a></p>
+<div class="textblock"><code>#include &lt;string&gt;</code><br />
+</div>
+<p><a href="2048_8h_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:ac77150accff829ce0d3be0031f539bc1" id="r_ac77150accff829ce0d3be0031f539bc1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac77150accff829ce0d3be0031f539bc1">loadGame</a> ()</td></tr>
+<tr class="memdesc:ac77150accff829ce0d3be0031f539bc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Загружает сохранённое состояние игры из файла.  <br /></td></tr>
+<tr class="separator:ac77150accff829ce0d3be0031f539bc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac42f6d85eb40dfdfadbf9933d885b4c1" id="r_ac42f6d85eb40dfdfadbf9933d885b4c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac42f6d85eb40dfdfadbf9933d885b4c1">saveGame</a> ()</td></tr>
+<tr class="memdesc:ac42f6d85eb40dfdfadbf9933d885b4c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сохраняет текущее состояние игры и лучший счёт в файл.  <br /></td></tr>
+<tr class="separator:ac42f6d85eb40dfdfadbf9933d885b4c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d7e8af417b6d543da691e9c0e2f6f9f" id="r_a9d7e8af417b6d543da691e9c0e2f6f9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d7e8af417b6d543da691e9c0e2f6f9f">clearScreen</a> ()</td></tr>
+<tr class="memdesc:a9d7e8af417b6d543da691e9c0e2f6f9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Очищает экран консоли.  <br /></td></tr>
+<tr class="separator:a9d7e8af417b6d543da691e9c0e2f6f9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8310d6d1e915cb179f834d9ca017950a" id="r_a8310d6d1e915cb179f834d9ca017950a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8310d6d1e915cb179f834d9ca017950a">printBoard</a> ()</td></tr>
+<tr class="memdesc:a8310d6d1e915cb179f834d9ca017950a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выводит игровое поле в консоль с текущим и лучшим счётом.  <br /></td></tr>
+<tr class="separator:a8310d6d1e915cb179f834d9ca017950a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15901c6440641eef370e8e5de6d24cd4" id="r_a15901c6440641eef370e8e5de6d24cd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15901c6440641eef370e8e5de6d24cd4">generateNumber</a> ()</td></tr>
+<tr class="memdesc:a15901c6440641eef370e8e5de6d24cd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавляет на случайную пустую ячейку число 2 (90%) или 4 (10%).  <br /></td></tr>
+<tr class="separator:a15901c6440641eef370e8e5de6d24cd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac4bcbfa17105059389c38d53c332acf" id="r_aac4bcbfa17105059389c38d53c332acf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac4bcbfa17105059389c38d53c332acf">moveLeft</a> ()</td></tr>
+<tr class="memdesc:aac4bcbfa17105059389c38d53c332acf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Двигает и объединяет ячейки влево согласно правилам 2048.  <br /></td></tr>
+<tr class="separator:aac4bcbfa17105059389c38d53c332acf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad459b0c12009486f978b50d8571c5c91" id="r_ad459b0c12009486f978b50d8571c5c91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad459b0c12009486f978b50d8571c5c91">rotateBoardClockwise</a> ()</td></tr>
+<tr class="memdesc:ad459b0c12009486f978b50d8571c5c91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Поворачивает игровое поле по часовой стрелке на 90°.  <br /></td></tr>
+<tr class="separator:ad459b0c12009486f978b50d8571c5c91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a868ecd23e8388f38f6ac096184847aa1" id="r_a868ecd23e8388f38f6ac096184847aa1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a868ecd23e8388f38f6ac096184847aa1">rotateBoardCounterClockwise</a> ()</td></tr>
+<tr class="memdesc:a868ecd23e8388f38f6ac096184847aa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Поворачивает игровое поле против часовой стрелки на 90°.  <br /></td></tr>
+<tr class="separator:a868ecd23e8388f38f6ac096184847aa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1832bb7ee9fec10919213ff0d5afcfb" id="r_aa1832bb7ee9fec10919213ff0d5afcfb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1832bb7ee9fec10919213ff0d5afcfb">move</a> (char dir)</td></tr>
+<tr class="memdesc:aa1832bb7ee9fec10919213ff0d5afcfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выполняет ход в заданном направлении ('w', 'a', 's', 'd').  <br /></td></tr>
+<tr class="separator:aa1832bb7ee9fec10919213ff0d5afcfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af817b0f39eb7ceb54c5298ba6b94c5be" id="r_af817b0f39eb7ceb54c5298ba6b94c5be"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af817b0f39eb7ceb54c5298ba6b94c5be">canMove</a> ()</td></tr>
+<tr class="memdesc:af817b0f39eb7ceb54c5298ba6b94c5be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, возможно ли совершить хоть один ход.  <br /></td></tr>
+<tr class="separator:af817b0f39eb7ceb54c5298ba6b94c5be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a285c3f70c3743d8c4d1d64574cbaeccf" id="r_a285c3f70c3743d8c4d1d64574cbaeccf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a285c3f70c3743d8c4d1d64574cbaeccf">startNewGame</a> ()</td></tr>
+<tr class="memdesc:a285c3f70c3743d8c4d1d64574cbaeccf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализирует новое игровое поле: сбрасывает счёт и размещает два числа.  <br /></td></tr>
+<tr class="separator:a285c3f70c3743d8c4d1d64574cbaeccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Переменные</h2></td></tr>
+<tr class="memitem:aa7a2b8ea2c784a4ad8b58a3262bb4f07" id="r_aa7a2b8ea2c784a4ad8b58a3262bb4f07"><td class="memItemLeft" align="right" valign="top"><a id="aa7a2b8ea2c784a4ad8b58a3262bb4f07" name="aa7a2b8ea2c784a4ad8b58a3262bb4f07"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><b>BOARD_SIZE</b> = 4</td></tr>
+<tr class="memdesc:aa7a2b8ea2c784a4ad8b58a3262bb4f07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Размер игрового поля (4x4) <br /></td></tr>
+<tr class="separator:aa7a2b8ea2c784a4ad8b58a3262bb4f07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3deb41098187a53ec1518351d5eb7df" id="r_af3deb41098187a53ec1518351d5eb7df"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3deb41098187a53ec1518351d5eb7df">board</a> [<a class="el" href="#aa7a2b8ea2c784a4ad8b58a3262bb4f07">BOARD_SIZE</a>][<a class="el" href="#aa7a2b8ea2c784a4ad8b58a3262bb4f07">BOARD_SIZE</a>]</td></tr>
+<tr class="separator:af3deb41098187a53ec1518351d5eb7df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef160b7437d94056f1dc59646cd5b87d" id="r_aef160b7437d94056f1dc59646cd5b87d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef160b7437d94056f1dc59646cd5b87d">score</a></td></tr>
+<tr class="memdesc:aef160b7437d94056f1dc59646cd5b87d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Текущий счёт игрока  <br /></td></tr>
+<tr class="separator:aef160b7437d94056f1dc59646cd5b87d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1d2ebe3608dccbcbdcddae74232eb59" id="r_ad1d2ebe3608dccbcbdcddae74232eb59"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1d2ebe3608dccbcbdcddae74232eb59">bestScore</a></td></tr>
+<tr class="memdesc:ad1d2ebe3608dccbcbdcddae74232eb59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Лучший сохранённый счёт  <br /></td></tr>
+<tr class="separator:ad1d2ebe3608dccbcbdcddae74232eb59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Заголовочный файл для консольной игры 2048. </p>
+<p>Содержит определения глобальных переменных и функций, отвечающих за основную логику игры: загрузка/сохранение состояния, отрисовка, управление игровым полем, генерация новых чисел, обработка ходов и проверка завершения игры. </p>
+</div><h2 class="groupheader">Функции</h2>
+<a id="af817b0f39eb7ceb54c5298ba6b94c5be" name="af817b0f39eb7ceb54c5298ba6b94c5be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af817b0f39eb7ceb54c5298ba6b94c5be">&#9670;&#160;</a></span>canMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool canMove </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Проверяет, возможно ли совершить хоть один ход. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если можно сделать ход, иначе false (игра окончена).</dd></dl>
+<p>Проверка:</p><ul>
+<li>есть хотя бы одна пустая ячейка</li>
+<li>есть соседние одинаковые числа</li>
+</ul>
+<div class="fragment"><div class="line"><span class="keywordflow">if</span> (!<a class="code hl_function" href="2048_8cpp.html#af817b0f39eb7ceb54c5298ba6b94c5be">canMove</a>()) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Game Over!&quot;</span>;</div>
+<div class="line">}</div>
+<div class="ttc" id="a2048_8cpp_html_af817b0f39eb7ceb54c5298ba6b94c5be"><div class="ttname"><a href="2048_8cpp.html#af817b0f39eb7ceb54c5298ba6b94c5be">canMove</a></div><div class="ttdeci">bool canMove()</div><div class="ttdoc">Проверяет, можно ли совершить ход.</div><div class="ttdef"><b>Определения</b> 2048.cpp:203</div></div>
+</div><!-- fragment --><p>Проверяет, возможно ли совершить хоть один ход.</p>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если есть хотя бы один доступный ход. </dd></dl>
+
+</div>
+</div>
+<a id="a9d7e8af417b6d543da691e9c0e2f6f9f" name="a9d7e8af417b6d543da691e9c0e2f6f9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d7e8af417b6d543da691e9c0e2f6f9f">&#9670;&#160;</a></span>clearScreen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void clearScreen </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Очищает экран консоли. </p>
+<p>Работает через system("cls") на Windows. </p><div class="fragment"><div class="line"><a class="code hl_function" href="2048_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f">clearScreen</a>();</div>
+<div class="ttc" id="a2048_8cpp_html_a9d7e8af417b6d543da691e9c0e2f6f9f"><div class="ttname"><a href="2048_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f">clearScreen</a></div><div class="ttdeci">void clearScreen()</div><div class="ttdoc">Очищает экран консоли (только Windows).</div><div class="ttdef"><b>Определения</b> 2048.cpp:80</div></div>
+</div><!-- fragment --><p>Очищает экран консоли. </p>
+
+</div>
+</div>
+<a id="a15901c6440641eef370e8e5de6d24cd4" name="a15901c6440641eef370e8e5de6d24cd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15901c6440641eef370e8e5de6d24cd4">&#9670;&#160;</a></span>generateNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void generateNumber </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Добавляет на случайную пустую ячейку число 2 (90%) или 4 (10%). </p>
+<p>Вызывается в начале игры и после каждого хода. </p><div class="fragment"><div class="line"><a class="code hl_function" href="2048_8cpp.html#a15901c6440641eef370e8e5de6d24cd4">generateNumber</a>();</div>
+<div class="ttc" id="a2048_8cpp_html_a15901c6440641eef370e8e5de6d24cd4"><div class="ttname"><a href="2048_8cpp.html#a15901c6440641eef370e8e5de6d24cd4">generateNumber</a></div><div class="ttdeci">void generateNumber()</div><div class="ttdoc">Генерирует новое число (2 или 4) в случайной пустой ячейке.</div><div class="ttdef"><b>Определения</b> 2048.cpp:100</div></div>
+</div><!-- fragment --><p>Добавляет на случайную пустую ячейку число 2 (90%) или 4 (10%). </p>
+
+</div>
+</div>
+<a id="ac77150accff829ce0d3be0031f539bc1" name="ac77150accff829ce0d3be0031f539bc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac77150accff829ce0d3be0031f539bc1">&#9670;&#160;</a></span>loadGame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool loadGame </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Загружает сохранённое состояние игры из файла. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если удалось загрузить, иначе false.</dd></dl>
+<div class="fragment"><div class="line"><span class="keywordflow">if</span> (!<a class="code hl_function" href="2048_8cpp.html#ac77150accff829ce0d3be0031f539bc1">loadGame</a>()) {</div>
+<div class="line">    <a class="code hl_function" href="2048_8cpp.html#a285c3f70c3743d8c4d1d64574cbaeccf">startNewGame</a>();</div>
+<div class="line">}</div>
+<div class="ttc" id="a2048_8cpp_html_a285c3f70c3743d8c4d1d64574cbaeccf"><div class="ttname"><a href="2048_8cpp.html#a285c3f70c3743d8c4d1d64574cbaeccf">startNewGame</a></div><div class="ttdeci">void startNewGame()</div><div class="ttdoc">Начинает новую игру: сбрасывает поле и счёт, генерирует 2 числа.</div><div class="ttdef"><b>Определения</b> 2048.cpp:219</div></div>
+<div class="ttc" id="a2048_8cpp_html_ac77150accff829ce0d3be0031f539bc1"><div class="ttname"><a href="2048_8cpp.html#ac77150accff829ce0d3be0031f539bc1">loadGame</a></div><div class="ttdeci">bool loadGame()</div><div class="ttdoc">Загружает состояние игры из файлов.</div><div class="ttdef"><b>Определения</b> 2048.cpp:36</div></div>
+</div><!-- fragment --><p>Загружает сохранённое состояние игры из файла.</p>
+<dl class="section return"><dt>Возвращает</dt><dd>true если загрузка прошла успешно, иначе false. </dd></dl>
+
+</div>
+</div>
+<a id="aa1832bb7ee9fec10919213ff0d5afcfb" name="aa1832bb7ee9fec10919213ff0d5afcfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1832bb7ee9fec10919213ff0d5afcfb">&#9670;&#160;</a></span>move()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool move </td>
+          <td>(</td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>dir</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Выполняет ход в заданном направлении ('w', 'a', 's', 'd'). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dir</td><td>— символ направления: W (вверх), A (влево), S (вниз), D (вправо) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если поле изменилось после хода.</dd></dl>
+<div class="fragment"><div class="line"><span class="keywordflow">if</span> (<a class="code hl_function" href="2048_8cpp.html#aa1832bb7ee9fec10919213ff0d5afcfb">move</a>(<span class="charliteral">&#39;a&#39;</span>)) {</div>
+<div class="line">    <a class="code hl_function" href="2048_8cpp.html#a15901c6440641eef370e8e5de6d24cd4">generateNumber</a>();</div>
+<div class="line">    <a class="code hl_function" href="2048_8cpp.html#ac42f6d85eb40dfdfadbf9933d885b4c1">saveGame</a>();</div>
+<div class="line">}</div>
+<div class="ttc" id="a2048_8cpp_html_aa1832bb7ee9fec10919213ff0d5afcfb"><div class="ttname"><a href="2048_8cpp.html#aa1832bb7ee9fec10919213ff0d5afcfb">move</a></div><div class="ttdeci">bool move(char dir)</div><div class="ttdoc">Делает ход в заданном направлении.</div><div class="ttdef"><b>Определения</b> 2048.cpp:172</div></div>
+<div class="ttc" id="a2048_8cpp_html_ac42f6d85eb40dfdfadbf9933d885b4c1"><div class="ttname"><a href="2048_8cpp.html#ac42f6d85eb40dfdfadbf9933d885b4c1">saveGame</a></div><div class="ttdeci">void saveGame()</div><div class="ttdoc">Сохраняет текущее состояние игры и лучший счёт в файлы.</div><div class="ttdef"><b>Определения</b> 2048.cpp:59</div></div>
+</div><!-- fragment --><p>Выполняет ход в заданном направлении ('w', 'a', 's', 'd').</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dir</td><td>Символ направления: 'w' (вверх), 'a' (влево), 's' (вниз), 'd' (вправо) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если поле изменилось после хода. </dd></dl>
+
+</div>
+</div>
+<a id="aac4bcbfa17105059389c38d53c332acf" name="aac4bcbfa17105059389c38d53c332acf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac4bcbfa17105059389c38d53c332acf">&#9670;&#160;</a></span>moveLeft()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool moveLeft </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Двигает и объединяет ячейки влево согласно правилам 2048. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если поле изменилось, иначе false.</dd></dl>
+<div class="fragment"><div class="line"><a class="code hl_variable" href="#af3deb41098187a53ec1518351d5eb7df">board</a>[0] = {2, 2, 0, 0};</div>
+<div class="line"><a class="code hl_function" href="2048_8cpp.html#aac4bcbfa17105059389c38d53c332acf">moveLeft</a>();  <span class="comment">// board[0] -&gt; {4, 0, 0, 0}, score += 4</span></div>
+<div class="ttc" id="a2048_8cpp_html_aac4bcbfa17105059389c38d53c332acf"><div class="ttname"><a href="2048_8cpp.html#aac4bcbfa17105059389c38d53c332acf">moveLeft</a></div><div class="ttdeci">bool moveLeft()</div><div class="ttdoc">Выполняет сдвиг и слияние ячеек влево.</div><div class="ttdef"><b>Определения</b> 2048.cpp:120</div></div>
+<div class="ttc" id="a2048_8h_html_af3deb41098187a53ec1518351d5eb7df"><div class="ttname"><a href="#af3deb41098187a53ec1518351d5eb7df">board</a></div><div class="ttdeci">int board[BOARD_SIZE][BOARD_SIZE]</div><div class="ttdef"><b>Определения</b> 2048.cpp:22</div></div>
+</div><!-- fragment --><p>Двигает и объединяет ячейки влево согласно правилам 2048.</p>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если поле изменилось, иначе false. </dd></dl>
+
+</div>
+</div>
+<a id="a8310d6d1e915cb179f834d9ca017950a" name="a8310d6d1e915cb179f834d9ca017950a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8310d6d1e915cb179f834d9ca017950a">&#9670;&#160;</a></span>printBoard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printBoard </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Выводит игровое поле в консоль с текущим и лучшим счётом. </p>
+<div class="fragment"><div class="line"><a class="code hl_function" href="2048_8cpp.html#a8310d6d1e915cb179f834d9ca017950a">printBoard</a>();</div>
+<div class="ttc" id="a2048_8cpp_html_a8310d6d1e915cb179f834d9ca017950a"><div class="ttname"><a href="2048_8cpp.html#a8310d6d1e915cb179f834d9ca017950a">printBoard</a></div><div class="ttdeci">void printBoard()</div><div class="ttdoc">Печатает текущее игровое поле и счёт на экран.</div><div class="ttdef"><b>Определения</b> 2048.cpp:87</div></div>
+</div><!-- fragment --><p>Выводит игровое поле в консоль с текущим и лучшим счётом. </p>
+
+</div>
+</div>
+<a id="ad459b0c12009486f978b50d8571c5c91" name="ad459b0c12009486f978b50d8571c5c91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad459b0c12009486f978b50d8571c5c91">&#9670;&#160;</a></span>rotateBoardClockwise()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rotateBoardClockwise </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Поворачивает игровое поле по часовой стрелке на 90°. </p>
+<p>Используется для реализации движения вверх и вправо через <a class="el" href="#aac4bcbfa17105059389c38d53c332acf" title="Двигает и объединяет ячейки влево согласно правилам 2048.">moveLeft()</a>.</p>
+<div class="fragment"><div class="line"><a class="code hl_function" href="2048_8cpp.html#ad459b0c12009486f978b50d8571c5c91">rotateBoardClockwise</a>();</div>
+<div class="ttc" id="a2048_8cpp_html_ad459b0c12009486f978b50d8571c5c91"><div class="ttname"><a href="2048_8cpp.html#ad459b0c12009486f978b50d8571c5c91">rotateBoardClockwise</a></div><div class="ttdeci">void rotateBoardClockwise()</div><div class="ttdoc">Поворачивает игровое поле по часовой стрелке.</div><div class="ttdef"><b>Определения</b> 2048.cpp:148</div></div>
+</div><!-- fragment --><p>Поворачивает игровое поле по часовой стрелке на 90°. </p>
+
+</div>
+</div>
+<a id="a868ecd23e8388f38f6ac096184847aa1" name="a868ecd23e8388f38f6ac096184847aa1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a868ecd23e8388f38f6ac096184847aa1">&#9670;&#160;</a></span>rotateBoardCounterClockwise()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rotateBoardCounterClockwise </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Поворачивает игровое поле против часовой стрелки на 90°. </p>
+<p>Используется для реализации движения вверх и вниз через <a class="el" href="#aac4bcbfa17105059389c38d53c332acf" title="Двигает и объединяет ячейки влево согласно правилам 2048.">moveLeft()</a>.</p>
+<div class="fragment"><div class="line"><a class="code hl_function" href="2048_8cpp.html#a868ecd23e8388f38f6ac096184847aa1">rotateBoardCounterClockwise</a>();</div>
+<div class="ttc" id="a2048_8cpp_html_a868ecd23e8388f38f6ac096184847aa1"><div class="ttname"><a href="2048_8cpp.html#a868ecd23e8388f38f6ac096184847aa1">rotateBoardCounterClockwise</a></div><div class="ttdeci">void rotateBoardCounterClockwise()</div><div class="ttdoc">Поворачивает игровое поле против часовой стрелки.</div><div class="ttdef"><b>Определения</b> 2048.cpp:159</div></div>
+</div><!-- fragment --><p>Поворачивает игровое поле против часовой стрелки на 90°. </p>
+
+</div>
+</div>
+<a id="ac42f6d85eb40dfdfadbf9933d885b4c1" name="ac42f6d85eb40dfdfadbf9933d885b4c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac42f6d85eb40dfdfadbf9933d885b4c1">&#9670;&#160;</a></span>saveGame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void saveGame </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Сохраняет текущее состояние игры и лучший счёт в файл. </p>
+<div class="fragment"><div class="line"><a class="code hl_function" href="2048_8cpp.html#ac42f6d85eb40dfdfadbf9933d885b4c1">saveGame</a>();  <span class="comment">// сохранить поле и счёт</span></div>
+</div><!-- fragment --><p>Сохраняет текущее состояние игры и лучший счёт в файл. </p>
+
+</div>
+</div>
+<a id="a285c3f70c3743d8c4d1d64574cbaeccf" name="a285c3f70c3743d8c4d1d64574cbaeccf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a285c3f70c3743d8c4d1d64574cbaeccf">&#9670;&#160;</a></span>startNewGame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void startNewGame </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Инициализирует новое игровое поле: сбрасывает счёт и размещает два числа. </p>
+<div class="fragment"><div class="line"><a class="code hl_function" href="2048_8cpp.html#a285c3f70c3743d8c4d1d64574cbaeccf">startNewGame</a>();</div>
+</div><!-- fragment --><p>Инициализирует новое игровое поле: сбрасывает счёт и размещает два числа. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Переменные</h2>
+<a id="ad1d2ebe3608dccbcbdcddae74232eb59" name="ad1d2ebe3608dccbcbdcddae74232eb59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1d2ebe3608dccbcbdcddae74232eb59">&#9670;&#160;</a></span>bestScore</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int bestScore</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Лучший сохранённый счёт </p>
+<p>Лучший достигнутый счёт (загружается/сохраняется отдельно) </p>
+
+</div>
+</div>
+<a id="af3deb41098187a53ec1518351d5eb7df" name="af3deb41098187a53ec1518351d5eb7df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3deb41098187a53ec1518351d5eb7df">&#9670;&#160;</a></span>board</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int board[<a class="el" href="#aa7a2b8ea2c784a4ad8b58a3262bb4f07">BOARD_SIZE</a>][<a class="el" href="#aa7a2b8ea2c784a4ad8b58a3262bb4f07">BOARD_SIZE</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Глобальный массив игрового поля Значения: степени двойки (2, 4, 8...) или 0 для пустых ячеек</p>
+<p>Игровое поле размером 4x4, содержащее значения (0 — пустая клетка, остальное — степени двойки) </p>
+
+</div>
+</div>
+<a id="aef160b7437d94056f1dc59646cd5b87d" name="aef160b7437d94056f1dc59646cd5b87d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef160b7437d94056f1dc59646cd5b87d">&#9670;&#160;</a></span>score</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int score</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Текущий счёт игрока </p>
+<p>Текущий счёт игрока </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_39cff49aaef8c4e801bb4116c1b8ab68.html">2048</a></li><li class="navelem"><a class="el" href="2048_8h.html">2048.h</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>2048: Исходный файл 2048/2048.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">2048
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('2048_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">2048.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="2048_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#ifndef GAME_2048_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define GAME_2048_H</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="2048_8h.html#aa7a2b8ea2c784a4ad8b58a3262bb4f07">   16</a></span><span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="2048_8h.html#aa7a2b8ea2c784a4ad8b58a3262bb4f07">BOARD_SIZE</a> = 4;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="2048_8cpp.html#af3deb41098187a53ec1518351d5eb7df">board</a>[<a class="code hl_variable" href="2048_8h.html#aa7a2b8ea2c784a4ad8b58a3262bb4f07">BOARD_SIZE</a>][<a class="code hl_variable" href="2048_8h.html#aa7a2b8ea2c784a4ad8b58a3262bb4f07">BOARD_SIZE</a>];</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="2048_8cpp.html#aef160b7437d94056f1dc59646cd5b87d">score</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="2048_8cpp.html#ad1d2ebe3608dccbcbdcddae74232eb59">bestScore</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keywordtype">bool</span> <a class="code hl_function" href="2048_8h.html#ac77150accff829ce0d3be0031f539bc1">loadGame</a>();</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keywordtype">void</span> <a class="code hl_function" href="2048_8h.html#ac42f6d85eb40dfdfadbf9933d885b4c1">saveGame</a>();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keywordtype">void</span> <a class="code hl_function" href="2048_8h.html#a9d7e8af417b6d543da691e9c0e2f6f9f">clearScreen</a>();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keywordtype">void</span> <a class="code hl_function" href="2048_8h.html#a8310d6d1e915cb179f834d9ca017950a">printBoard</a>();</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keywordtype">void</span> <a class="code hl_function" href="2048_8h.html#a15901c6440641eef370e8e5de6d24cd4">generateNumber</a>();</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keywordtype">bool</span> <a class="code hl_function" href="2048_8h.html#aac4bcbfa17105059389c38d53c332acf">moveLeft</a>();</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="keywordtype">void</span> <a class="code hl_function" href="2048_8h.html#ad459b0c12009486f978b50d8571c5c91">rotateBoardClockwise</a>();</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="keywordtype">void</span> <a class="code hl_function" href="2048_8h.html#a868ecd23e8388f38f6ac096184847aa1">rotateBoardCounterClockwise</a>();</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="keywordtype">bool</span> <a class="code hl_function" href="2048_8h.html#aa1832bb7ee9fec10919213ff0d5afcfb">move</a>(<span class="keywordtype">char</span> dir);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="keywordtype">bool</span> <a class="code hl_function" href="2048_8h.html#af817b0f39eb7ceb54c5298ba6b94c5be">canMove</a>();</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="keywordtype">void</span> <a class="code hl_function" href="2048_8h.html#a285c3f70c3743d8c4d1d64574cbaeccf">startNewGame</a>();</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="preprocessor">#endif </span><span class="comment">// GAME_2048_H</span></div>
+<div class="ttc" id="a2048_8cpp_html_ad1d2ebe3608dccbcbdcddae74232eb59"><div class="ttname"><a href="2048_8cpp.html#ad1d2ebe3608dccbcbdcddae74232eb59">bestScore</a></div><div class="ttdeci">int bestScore</div><div class="ttdoc">Лучший сохранённый счёт</div><div class="ttdef"><b>Определения</b> 2048.cpp:30</div></div>
+<div class="ttc" id="a2048_8cpp_html_aef160b7437d94056f1dc59646cd5b87d"><div class="ttname"><a href="2048_8cpp.html#aef160b7437d94056f1dc59646cd5b87d">score</a></div><div class="ttdeci">int score</div><div class="ttdoc">Текущий счёт игрока</div><div class="ttdef"><b>Определения</b> 2048.cpp:26</div></div>
+<div class="ttc" id="a2048_8cpp_html_af3deb41098187a53ec1518351d5eb7df"><div class="ttname"><a href="2048_8cpp.html#af3deb41098187a53ec1518351d5eb7df">board</a></div><div class="ttdeci">int board[BOARD_SIZE][BOARD_SIZE]</div><div class="ttdef"><b>Определения</b> 2048.cpp:22</div></div>
+<div class="ttc" id="a2048_8h_html_a15901c6440641eef370e8e5de6d24cd4"><div class="ttname"><a href="2048_8h.html#a15901c6440641eef370e8e5de6d24cd4">generateNumber</a></div><div class="ttdeci">void generateNumber()</div><div class="ttdoc">Добавляет на случайную пустую ячейку число 2 (90%) или 4 (10%).</div><div class="ttdef"><b>Определения</b> 2048.cpp:100</div></div>
+<div class="ttc" id="a2048_8h_html_a285c3f70c3743d8c4d1d64574cbaeccf"><div class="ttname"><a href="2048_8h.html#a285c3f70c3743d8c4d1d64574cbaeccf">startNewGame</a></div><div class="ttdeci">void startNewGame()</div><div class="ttdoc">Инициализирует новое игровое поле: сбрасывает счёт и размещает два числа.</div><div class="ttdef"><b>Определения</b> 2048.cpp:219</div></div>
+<div class="ttc" id="a2048_8h_html_a8310d6d1e915cb179f834d9ca017950a"><div class="ttname"><a href="2048_8h.html#a8310d6d1e915cb179f834d9ca017950a">printBoard</a></div><div class="ttdeci">void printBoard()</div><div class="ttdoc">Выводит игровое поле в консоль с текущим и лучшим счётом.</div><div class="ttdef"><b>Определения</b> 2048.cpp:87</div></div>
+<div class="ttc" id="a2048_8h_html_a868ecd23e8388f38f6ac096184847aa1"><div class="ttname"><a href="2048_8h.html#a868ecd23e8388f38f6ac096184847aa1">rotateBoardCounterClockwise</a></div><div class="ttdeci">void rotateBoardCounterClockwise()</div><div class="ttdoc">Поворачивает игровое поле против часовой стрелки на 90°.</div><div class="ttdef"><b>Определения</b> 2048.cpp:159</div></div>
+<div class="ttc" id="a2048_8h_html_a9d7e8af417b6d543da691e9c0e2f6f9f"><div class="ttname"><a href="2048_8h.html#a9d7e8af417b6d543da691e9c0e2f6f9f">clearScreen</a></div><div class="ttdeci">void clearScreen()</div><div class="ttdoc">Очищает экран консоли.</div><div class="ttdef"><b>Определения</b> 2048.cpp:80</div></div>
+<div class="ttc" id="a2048_8h_html_aa1832bb7ee9fec10919213ff0d5afcfb"><div class="ttname"><a href="2048_8h.html#aa1832bb7ee9fec10919213ff0d5afcfb">move</a></div><div class="ttdeci">bool move(char dir)</div><div class="ttdoc">Выполняет ход в заданном направлении (&#39;w&#39;, &#39;a&#39;, &#39;s&#39;, &#39;d&#39;).</div><div class="ttdef"><b>Определения</b> 2048.cpp:172</div></div>
+<div class="ttc" id="a2048_8h_html_aa7a2b8ea2c784a4ad8b58a3262bb4f07"><div class="ttname"><a href="2048_8h.html#aa7a2b8ea2c784a4ad8b58a3262bb4f07">BOARD_SIZE</a></div><div class="ttdeci">const int BOARD_SIZE</div><div class="ttdoc">Размер игрового поля (4x4)</div><div class="ttdef"><b>Определения</b> 2048.h:16</div></div>
+<div class="ttc" id="a2048_8h_html_aac4bcbfa17105059389c38d53c332acf"><div class="ttname"><a href="2048_8h.html#aac4bcbfa17105059389c38d53c332acf">moveLeft</a></div><div class="ttdeci">bool moveLeft()</div><div class="ttdoc">Двигает и объединяет ячейки влево согласно правилам 2048.</div><div class="ttdef"><b>Определения</b> 2048.cpp:120</div></div>
+<div class="ttc" id="a2048_8h_html_ac42f6d85eb40dfdfadbf9933d885b4c1"><div class="ttname"><a href="2048_8h.html#ac42f6d85eb40dfdfadbf9933d885b4c1">saveGame</a></div><div class="ttdeci">void saveGame()</div><div class="ttdoc">Сохраняет текущее состояние игры и лучший счёт в файл.</div><div class="ttdef"><b>Определения</b> 2048.cpp:59</div></div>
+<div class="ttc" id="a2048_8h_html_ac77150accff829ce0d3be0031f539bc1"><div class="ttname"><a href="2048_8h.html#ac77150accff829ce0d3be0031f539bc1">loadGame</a></div><div class="ttdeci">bool loadGame()</div><div class="ttdoc">Загружает сохранённое состояние игры из файла.</div><div class="ttdef"><b>Определения</b> 2048.cpp:36</div></div>
+<div class="ttc" id="a2048_8h_html_ad459b0c12009486f978b50d8571c5c91"><div class="ttname"><a href="2048_8h.html#ad459b0c12009486f978b50d8571c5c91">rotateBoardClockwise</a></div><div class="ttdeci">void rotateBoardClockwise()</div><div class="ttdoc">Поворачивает игровое поле по часовой стрелке на 90°.</div><div class="ttdef"><b>Определения</b> 2048.cpp:148</div></div>
+<div class="ttc" id="a2048_8h_html_af817b0f39eb7ceb54c5298ba6b94c5be"><div class="ttname"><a href="2048_8h.html#af817b0f39eb7ceb54c5298ba6b94c5be">canMove</a></div><div class="ttdeci">bool canMove()</div><div class="ttdoc">Проверяет, возможно ли совершить хоть один ход.</div><div class="ttdef"><b>Определения</b> 2048.cpp:203</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_39cff49aaef8c4e801bb4116c1b8ab68.html">2048</a></li><li class="navelem"><a class="el" href="2048_8h.html">2048.h</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>
