@@ -159,11 +159,13 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>BOARD_SIZE</b> =
 <tr class="separator:aa7a2b8ea2c784a4ad8b58a3262bb4f07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3deb41098187a53ec1518351d5eb7df" id="r_af3deb41098187a53ec1518351d5eb7df"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3deb41098187a53ec1518351d5eb7df">board</a> [<a class="el" href="#aa7a2b8ea2c784a4ad8b58a3262bb4f07">BOARD_SIZE</a>][<a class="el" href="#aa7a2b8ea2c784a4ad8b58a3262bb4f07">BOARD_SIZE</a>]</td></tr>
 <tr class="separator:af3deb41098187a53ec1518351d5eb7df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef160b7437d94056f1dc59646cd5b87d" id="r_aef160b7437d94056f1dc59646cd5b87d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef160b7437d94056f1dc59646cd5b87d">score</a></td></tr>
-<tr class="memdesc:aef160b7437d94056f1dc59646cd5b87d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Текущий счёт игрока  <br /></td></tr>
+<tr class="memitem:aef160b7437d94056f1dc59646cd5b87d" id="r_aef160b7437d94056f1dc59646cd5b87d"><td class="memItemLeft" align="right" valign="top"><a id="aef160b7437d94056f1dc59646cd5b87d" name="aef160b7437d94056f1dc59646cd5b87d"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>score</b></td></tr>
+<tr class="memdesc:aef160b7437d94056f1dc59646cd5b87d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Текущий счёт игрока <br /></td></tr>
 <tr class="separator:aef160b7437d94056f1dc59646cd5b87d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1d2ebe3608dccbcbdcddae74232eb59" id="r_ad1d2ebe3608dccbcbdcddae74232eb59"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1d2ebe3608dccbcbdcddae74232eb59">bestScore</a></td></tr>
-<tr class="memdesc:ad1d2ebe3608dccbcbdcddae74232eb59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Лучший сохранённый счёт  <br /></td></tr>
+<tr class="memitem:ad1d2ebe3608dccbcbdcddae74232eb59" id="r_ad1d2ebe3608dccbcbdcddae74232eb59"><td class="memItemLeft" align="right" valign="top"><a id="ad1d2ebe3608dccbcbdcddae74232eb59" name="ad1d2ebe3608dccbcbdcddae74232eb59"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>bestScore</b></td></tr>
+<tr class="memdesc:ad1d2ebe3608dccbcbdcddae74232eb59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Лучший сохранённый счёт <br /></td></tr>
 <tr class="separator:ad1d2ebe3608dccbcbdcddae74232eb59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
@@ -194,10 +196,8 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>BOARD_SIZE</b> =
 <div class="fragment"><div class="line"><span class="keywordflow">if</span> (!<a class="code hl_function" href="2048_8cpp.html#af817b0f39eb7ceb54c5298ba6b94c5be">canMove</a>()) {</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Game Over!&quot;</span>;</div>
 <div class="line">}</div>
-<div class="ttc" id="a2048_8cpp_html_af817b0f39eb7ceb54c5298ba6b94c5be"><div class="ttname"><a href="2048_8cpp.html#af817b0f39eb7ceb54c5298ba6b94c5be">canMove</a></div><div class="ttdeci">bool canMove()</div><div class="ttdoc">Проверяет, можно ли совершить ход.</div><div class="ttdef"><b>Определения</b> 2048.cpp:203</div></div>
-</div><!-- fragment --><p>Проверяет, возможно ли совершить хоть один ход.</p>
-<dl class="section return"><dt>Возвращает</dt><dd>true, если есть хотя бы один доступный ход. </dd></dl>
-
+<div class="ttc" id="a2048_8cpp_html_af817b0f39eb7ceb54c5298ba6b94c5be"><div class="ttname"><a href="2048_8cpp.html#af817b0f39eb7ceb54c5298ba6b94c5be">canMove</a></div><div class="ttdeci">bool canMove()</div><div class="ttdoc">Проверяет, возможно ли совершить хоть один ход.</div><div class="ttdef"><b>Определения</b> 2048.cpp:159</div></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="a9d7e8af417b6d543da691e9c0e2f6f9f" name="a9d7e8af417b6d543da691e9c0e2f6f9f"></a>
@@ -217,9 +217,8 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>BOARD_SIZE</b> =
 
 <p>Очищает экран консоли. </p>
 <p>Работает через system("cls") на Windows. </p><div class="fragment"><div class="line"><a class="code hl_function" href="2048_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f">clearScreen</a>();</div>
-<div class="ttc" id="a2048_8cpp_html_a9d7e8af417b6d543da691e9c0e2f6f9f"><div class="ttname"><a href="2048_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f">clearScreen</a></div><div class="ttdeci">void clearScreen()</div><div class="ttdoc">Очищает экран консоли (только Windows).</div><div class="ttdef"><b>Определения</b> 2048.cpp:80</div></div>
-</div><!-- fragment --><p>Очищает экран консоли. </p>
-
+<div class="ttc" id="a2048_8cpp_html_a9d7e8af417b6d543da691e9c0e2f6f9f"><div class="ttname"><a href="2048_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f">clearScreen</a></div><div class="ttdeci">void clearScreen()</div><div class="ttdoc">Очищает экран консоли.</div><div class="ttdef"><b>Определения</b> 2048.cpp:61</div></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="a15901c6440641eef370e8e5de6d24cd4" name="a15901c6440641eef370e8e5de6d24cd4"></a>
@@ -239,9 +238,8 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>BOARD_SIZE</b> =
 
 <p>Добавляет на случайную пустую ячейку число 2 (90%) или 4 (10%). </p>
 <p>Вызывается в начале игры и после каждого хода. </p><div class="fragment"><div class="line"><a class="code hl_function" href="2048_8cpp.html#a15901c6440641eef370e8e5de6d24cd4">generateNumber</a>();</div>
-<div class="ttc" id="a2048_8cpp_html_a15901c6440641eef370e8e5de6d24cd4"><div class="ttname"><a href="2048_8cpp.html#a15901c6440641eef370e8e5de6d24cd4">generateNumber</a></div><div class="ttdeci">void generateNumber()</div><div class="ttdoc">Генерирует новое число (2 или 4) в случайной пустой ячейке.</div><div class="ttdef"><b>Определения</b> 2048.cpp:100</div></div>
-</div><!-- fragment --><p>Добавляет на случайную пустую ячейку число 2 (90%) или 4 (10%). </p>
-
+<div class="ttc" id="a2048_8cpp_html_a15901c6440641eef370e8e5de6d24cd4"><div class="ttname"><a href="2048_8cpp.html#a15901c6440641eef370e8e5de6d24cd4">generateNumber</a></div><div class="ttdeci">void generateNumber()</div><div class="ttdoc">Добавляет на случайную пустую ячейку число 2 (90%) или 4 (10%).</div><div class="ttdef"><b>Определения</b> 2048.cpp:75</div></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="ac77150accff829ce0d3be0031f539bc1" name="ac77150accff829ce0d3be0031f539bc1"></a>
@@ -264,11 +262,9 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>BOARD_SIZE</b> =
 <div class="fragment"><div class="line"><span class="keywordflow">if</span> (!<a class="code hl_function" href="2048_8cpp.html#ac77150accff829ce0d3be0031f539bc1">loadGame</a>()) {</div>
 <div class="line">    <a class="code hl_function" href="2048_8cpp.html#a285c3f70c3743d8c4d1d64574cbaeccf">startNewGame</a>();</div>
 <div class="line">}</div>
-<div class="ttc" id="a2048_8cpp_html_a285c3f70c3743d8c4d1d64574cbaeccf"><div class="ttname"><a href="2048_8cpp.html#a285c3f70c3743d8c4d1d64574cbaeccf">startNewGame</a></div><div class="ttdeci">void startNewGame()</div><div class="ttdoc">Начинает новую игру: сбрасывает поле и счёт, генерирует 2 числа.</div><div class="ttdef"><b>Определения</b> 2048.cpp:219</div></div>
-<div class="ttc" id="a2048_8cpp_html_ac77150accff829ce0d3be0031f539bc1"><div class="ttname"><a href="2048_8cpp.html#ac77150accff829ce0d3be0031f539bc1">loadGame</a></div><div class="ttdeci">bool loadGame()</div><div class="ttdoc">Загружает состояние игры из файлов.</div><div class="ttdef"><b>Определения</b> 2048.cpp:36</div></div>
-</div><!-- fragment --><p>Загружает сохранённое состояние игры из файла.</p>
-<dl class="section return"><dt>Возвращает</dt><dd>true если загрузка прошла успешно, иначе false. </dd></dl>
-
+<div class="ttc" id="a2048_8cpp_html_a285c3f70c3743d8c4d1d64574cbaeccf"><div class="ttname"><a href="2048_8cpp.html#a285c3f70c3743d8c4d1d64574cbaeccf">startNewGame</a></div><div class="ttdeci">void startNewGame()</div><div class="ttdoc">Инициализирует новое игровое поле: сбрасывает счёт и размещает два числа.</div><div class="ttdef"><b>Определения</b> 2048.cpp:172</div></div>
+<div class="ttc" id="a2048_8cpp_html_ac77150accff829ce0d3be0031f539bc1"><div class="ttname"><a href="2048_8cpp.html#ac77150accff829ce0d3be0031f539bc1">loadGame</a></div><div class="ttdeci">bool loadGame()</div><div class="ttdoc">Загружает сохранённое состояние игры из файла.</div><div class="ttdef"><b>Определения</b> 2048.cpp:23</div></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="aa1832bb7ee9fec10919213ff0d5afcfb" name="aa1832bb7ee9fec10919213ff0d5afcfb"></a>
@@ -298,17 +294,9 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>BOARD_SIZE</b> =
 <div class="line">    <a class="code hl_function" href="2048_8cpp.html#a15901c6440641eef370e8e5de6d24cd4">generateNumber</a>();</div>
 <div class="line">    <a class="code hl_function" href="2048_8cpp.html#ac42f6d85eb40dfdfadbf9933d885b4c1">saveGame</a>();</div>
 <div class="line">}</div>
-<div class="ttc" id="a2048_8cpp_html_aa1832bb7ee9fec10919213ff0d5afcfb"><div class="ttname"><a href="2048_8cpp.html#aa1832bb7ee9fec10919213ff0d5afcfb">move</a></div><div class="ttdeci">bool move(char dir)</div><div class="ttdoc">Делает ход в заданном направлении.</div><div class="ttdef"><b>Определения</b> 2048.cpp:172</div></div>
-<div class="ttc" id="a2048_8cpp_html_ac42f6d85eb40dfdfadbf9933d885b4c1"><div class="ttname"><a href="2048_8cpp.html#ac42f6d85eb40dfdfadbf9933d885b4c1">saveGame</a></div><div class="ttdeci">void saveGame()</div><div class="ttdoc">Сохраняет текущее состояние игры и лучший счёт в файлы.</div><div class="ttdef"><b>Определения</b> 2048.cpp:59</div></div>
-</div><!-- fragment --><p>Выполняет ход в заданном направлении ('w', 'a', 's', 'd').</p>
-<dl class="params"><dt>Аргументы</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">dir</td><td>Символ направления: 'w' (вверх), 'a' (влево), 's' (вниз), 'd' (вправо) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Возвращает</dt><dd>true, если поле изменилось после хода. </dd></dl>
-
+<div class="ttc" id="a2048_8cpp_html_aa1832bb7ee9fec10919213ff0d5afcfb"><div class="ttname"><a href="2048_8cpp.html#aa1832bb7ee9fec10919213ff0d5afcfb">move</a></div><div class="ttdeci">bool move(char dir)</div><div class="ttdoc">Выполняет ход в заданном направлении (&#39;w&#39;, &#39;a&#39;, &#39;s&#39;, &#39;d&#39;).</div><div class="ttdef"><b>Определения</b> 2048.cpp:132</div></div>
+<div class="ttc" id="a2048_8cpp_html_ac42f6d85eb40dfdfadbf9933d885b4c1"><div class="ttname"><a href="2048_8cpp.html#ac42f6d85eb40dfdfadbf9933d885b4c1">saveGame</a></div><div class="ttdeci">void saveGame()</div><div class="ttdoc">Сохраняет текущее состояние игры и лучший счёт в файл.</div><div class="ttdef"><b>Определения</b> 2048.cpp:43</div></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="aac4bcbfa17105059389c38d53c332acf" name="aac4bcbfa17105059389c38d53c332acf"></a>
@@ -329,12 +317,10 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>BOARD_SIZE</b> =
 <p>Двигает и объединяет ячейки влево согласно правилам 2048. </p>
 <dl class="section return"><dt>Возвращает</dt><dd>true, если поле изменилось, иначе false.</dd></dl>
 <div class="fragment"><div class="line"><a class="code hl_variable" href="#af3deb41098187a53ec1518351d5eb7df">board</a>[0] = {2, 2, 0, 0};</div>
-<div class="line"><a class="code hl_function" href="2048_8cpp.html#aac4bcbfa17105059389c38d53c332acf">moveLeft</a>();  <span class="comment">// board[0] -&gt; {4, 0, 0, 0}, score += 4</span></div>
-<div class="ttc" id="a2048_8cpp_html_aac4bcbfa17105059389c38d53c332acf"><div class="ttname"><a href="2048_8cpp.html#aac4bcbfa17105059389c38d53c332acf">moveLeft</a></div><div class="ttdeci">bool moveLeft()</div><div class="ttdoc">Выполняет сдвиг и слияние ячеек влево.</div><div class="ttdef"><b>Определения</b> 2048.cpp:120</div></div>
-<div class="ttc" id="a2048_8h_html_af3deb41098187a53ec1518351d5eb7df"><div class="ttname"><a href="#af3deb41098187a53ec1518351d5eb7df">board</a></div><div class="ttdeci">int board[BOARD_SIZE][BOARD_SIZE]</div><div class="ttdef"><b>Определения</b> 2048.cpp:22</div></div>
-</div><!-- fragment --><p>Двигает и объединяет ячейки влево согласно правилам 2048.</p>
-<dl class="section return"><dt>Возвращает</dt><dd>true, если поле изменилось, иначе false. </dd></dl>
-
+<div class="line"><a class="code hl_function" href="2048_8cpp.html#aac4bcbfa17105059389c38d53c332acf">moveLeft</a>();</div>
+<div class="ttc" id="a2048_8cpp_html_aac4bcbfa17105059389c38d53c332acf"><div class="ttname"><a href="2048_8cpp.html#aac4bcbfa17105059389c38d53c332acf">moveLeft</a></div><div class="ttdeci">bool moveLeft()</div><div class="ttdoc">Двигает и объединяет ячейки влево согласно правилам 2048.</div><div class="ttdef"><b>Определения</b> 2048.cpp:91</div></div>
+<div class="ttc" id="a2048_8h_html_af3deb41098187a53ec1518351d5eb7df"><div class="ttname"><a href="#af3deb41098187a53ec1518351d5eb7df">board</a></div><div class="ttdeci">int board[BOARD_SIZE][BOARD_SIZE]</div><div class="ttdef"><b>Определения</b> 2048.cpp:19</div></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="a8310d6d1e915cb179f834d9ca017950a" name="a8310d6d1e915cb179f834d9ca017950a"></a>
@@ -354,9 +340,8 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>BOARD_SIZE</b> =
 
 <p>Выводит игровое поле в консоль с текущим и лучшим счётом. </p>
 <div class="fragment"><div class="line"><a class="code hl_function" href="2048_8cpp.html#a8310d6d1e915cb179f834d9ca017950a">printBoard</a>();</div>
-<div class="ttc" id="a2048_8cpp_html_a8310d6d1e915cb179f834d9ca017950a"><div class="ttname"><a href="2048_8cpp.html#a8310d6d1e915cb179f834d9ca017950a">printBoard</a></div><div class="ttdeci">void printBoard()</div><div class="ttdoc">Печатает текущее игровое поле и счёт на экран.</div><div class="ttdef"><b>Определения</b> 2048.cpp:87</div></div>
-</div><!-- fragment --><p>Выводит игровое поле в консоль с текущим и лучшим счётом. </p>
-
+<div class="ttc" id="a2048_8cpp_html_a8310d6d1e915cb179f834d9ca017950a"><div class="ttname"><a href="2048_8cpp.html#a8310d6d1e915cb179f834d9ca017950a">printBoard</a></div><div class="ttdeci">void printBoard()</div><div class="ttdoc">Выводит игровое поле в консоль с текущим и лучшим счётом.</div><div class="ttdef"><b>Определения</b> 2048.cpp:65</div></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="ad459b0c12009486f978b50d8571c5c91" name="ad459b0c12009486f978b50d8571c5c91"></a>
@@ -377,9 +362,8 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>BOARD_SIZE</b> =
 <p>Поворачивает игровое поле по часовой стрелке на 90°. </p>
 <p>Используется для реализации движения вверх и вправо через <a class="el" href="#aac4bcbfa17105059389c38d53c332acf" title="Двигает и объединяет ячейки влево согласно правилам 2048.">moveLeft()</a>.</p>
 <div class="fragment"><div class="line"><a class="code hl_function" href="2048_8cpp.html#ad459b0c12009486f978b50d8571c5c91">rotateBoardClockwise</a>();</div>
-<div class="ttc" id="a2048_8cpp_html_ad459b0c12009486f978b50d8571c5c91"><div class="ttname"><a href="2048_8cpp.html#ad459b0c12009486f978b50d8571c5c91">rotateBoardClockwise</a></div><div class="ttdeci">void rotateBoardClockwise()</div><div class="ttdoc">Поворачивает игровое поле по часовой стрелке.</div><div class="ttdef"><b>Определения</b> 2048.cpp:148</div></div>
-</div><!-- fragment --><p>Поворачивает игровое поле по часовой стрелке на 90°. </p>
-
+<div class="ttc" id="a2048_8cpp_html_ad459b0c12009486f978b50d8571c5c91"><div class="ttname"><a href="2048_8cpp.html#ad459b0c12009486f978b50d8571c5c91">rotateBoardClockwise</a></div><div class="ttdeci">void rotateBoardClockwise()</div><div class="ttdoc">Поворачивает игровое поле по часовой стрелке на 90°.</div><div class="ttdef"><b>Определения</b> 2048.cpp:116</div></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="a868ecd23e8388f38f6ac096184847aa1" name="a868ecd23e8388f38f6ac096184847aa1"></a>
@@ -400,9 +384,8 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>BOARD_SIZE</b> =
 <p>Поворачивает игровое поле против часовой стрелки на 90°. </p>
 <p>Используется для реализации движения вверх и вниз через <a class="el" href="#aac4bcbfa17105059389c38d53c332acf" title="Двигает и объединяет ячейки влево согласно правилам 2048.">moveLeft()</a>.</p>
 <div class="fragment"><div class="line"><a class="code hl_function" href="2048_8cpp.html#a868ecd23e8388f38f6ac096184847aa1">rotateBoardCounterClockwise</a>();</div>
-<div class="ttc" id="a2048_8cpp_html_a868ecd23e8388f38f6ac096184847aa1"><div class="ttname"><a href="2048_8cpp.html#a868ecd23e8388f38f6ac096184847aa1">rotateBoardCounterClockwise</a></div><div class="ttdeci">void rotateBoardCounterClockwise()</div><div class="ttdoc">Поворачивает игровое поле против часовой стрелки.</div><div class="ttdef"><b>Определения</b> 2048.cpp:159</div></div>
-</div><!-- fragment --><p>Поворачивает игровое поле против часовой стрелки на 90°. </p>
-
+<div class="ttc" id="a2048_8cpp_html_a868ecd23e8388f38f6ac096184847aa1"><div class="ttname"><a href="2048_8cpp.html#a868ecd23e8388f38f6ac096184847aa1">rotateBoardCounterClockwise</a></div><div class="ttdeci">void rotateBoardCounterClockwise()</div><div class="ttdoc">Поворачивает игровое поле против часовой стрелки на 90°.</div><div class="ttdef"><b>Определения</b> 2048.cpp:124</div></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="ac42f6d85eb40dfdfadbf9933d885b4c1" name="ac42f6d85eb40dfdfadbf9933d885b4c1"></a>
@@ -421,9 +404,8 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>BOARD_SIZE</b> =
 </div><div class="memdoc">
 
 <p>Сохраняет текущее состояние игры и лучший счёт в файл. </p>
-<div class="fragment"><div class="line"><a class="code hl_function" href="2048_8cpp.html#ac42f6d85eb40dfdfadbf9933d885b4c1">saveGame</a>();  <span class="comment">// сохранить поле и счёт</span></div>
-</div><!-- fragment --><p>Сохраняет текущее состояние игры и лучший счёт в файл. </p>
-
+<div class="fragment"><div class="line"><a class="code hl_function" href="2048_8cpp.html#ac42f6d85eb40dfdfadbf9933d885b4c1">saveGame</a>();</div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="a285c3f70c3743d8c4d1d64574cbaeccf" name="a285c3f70c3743d8c4d1d64574cbaeccf"></a>
@@ -443,36 +425,10 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>BOARD_SIZE</b> =
 
 <p>Инициализирует новое игровое поле: сбрасывает счёт и размещает два числа. </p>
 <div class="fragment"><div class="line"><a class="code hl_function" href="2048_8cpp.html#a285c3f70c3743d8c4d1d64574cbaeccf">startNewGame</a>();</div>
-</div><!-- fragment --><p>Инициализирует новое игровое поле: сбрасывает счёт и размещает два числа. </p>
-
+</div><!-- fragment --> 
 </div>
 </div>
 <h2 class="groupheader">Переменные</h2>
-<a id="ad1d2ebe3608dccbcbdcddae74232eb59" name="ad1d2ebe3608dccbcbdcddae74232eb59"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1d2ebe3608dccbcbdcddae74232eb59">&#9670;&#160;</a></span>bestScore</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int bestScore</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Лучший сохранённый счёт </p>
-<p>Лучший достигнутый счёт (загружается/сохраняется отдельно) </p>
-
-</div>
-</div>
 <a id="af3deb41098187a53ec1518351d5eb7df" name="af3deb41098187a53ec1518351d5eb7df"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af3deb41098187a53ec1518351d5eb7df">&#9670;&#160;</a></span>board</h2>
 
@@ -492,33 +448,7 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>BOARD_SIZE</b> =
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Глобальный массив игрового поля Значения: степени двойки (2, 4, 8...) или 0 для пустых ячеек</p>
-<p>Игровое поле размером 4x4, содержащее значения (0 — пустая клетка, остальное — степени двойки) </p>
-
-</div>
-</div>
-<a id="aef160b7437d94056f1dc59646cd5b87d" name="aef160b7437d94056f1dc59646cd5b87d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef160b7437d94056f1dc59646cd5b87d">&#9670;&#160;</a></span>score</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int score</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Текущий счёт игрока </p>
-<p>Текущий счёт игрока </p>
+<p>Глобальный массив игрового поля Значения: степени двойки (2, 4, 8...) или 0 для пустых ячеек </p>
 
 </div>
 </div>

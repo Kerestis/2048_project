@@ -2,7 +2,7 @@
 \hypertarget{2048_8cpp}{}\label{2048_8cpp}\index{2048/2048.cpp@{2048/2048.cpp}}
 
 
-Реализация логики консольной игры 2048.  
+Реализация функций для консольной игры 2048.  
 
 
 {\ttfamily \#include "{}2048.\+h"{}}\newline
@@ -18,42 +18,44 @@
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{2048_8cpp_ac77150accff829ce0d3be0031f539bc1}{load\+Game}} ()
-\begin{DoxyCompactList}\small\item\em Загружает состояние игры из файлов. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Загружает сохранённое состояние игры из файла. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{2048_8cpp_ac42f6d85eb40dfdfadbf9933d885b4c1}{save\+Game}} ()
-\begin{DoxyCompactList}\small\item\em Сохраняет текущее состояние игры и лучший счёт в файлы. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Сохраняет текущее состояние игры и лучший счёт в файл. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{2048_8cpp_a9d7e8af417b6d543da691e9c0e2f6f9f}{clear\+Screen}} ()
-\begin{DoxyCompactList}\small\item\em Очищает экран консоли (только Windows). \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Очищает экран консоли. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{2048_8cpp_a8310d6d1e915cb179f834d9ca017950a}{print\+Board}} ()
-\begin{DoxyCompactList}\small\item\em Печатает текущее игровое поле и счёт на экран. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Выводит игровое поле в консоль с текущим и лучшим счётом. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{2048_8cpp_a15901c6440641eef370e8e5de6d24cd4}{generate\+Number}} ()
-\begin{DoxyCompactList}\small\item\em Генерирует новое число (2 или 4) в случайной пустой ячейке. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Добавляет на случайную пустую ячейку число 2 (90\%) или 4 (10\%). \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{2048_8cpp_aac4bcbfa17105059389c38d53c332acf}{move\+Left}} ()
-\begin{DoxyCompactList}\small\item\em Выполняет сдвиг и слияние ячеек влево. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Двигает и объединяет ячейки влево согласно правилам 2048. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{2048_8cpp_ad459b0c12009486f978b50d8571c5c91}{rotate\+Board\+Clockwise}} ()
-\begin{DoxyCompactList}\small\item\em Поворачивает игровое поле по часовой стрелке. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Поворачивает игровое поле по часовой стрелке на 90°. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{2048_8cpp_a868ecd23e8388f38f6ac096184847aa1}{rotate\+Board\+Counter\+Clockwise}} ()
-\begin{DoxyCompactList}\small\item\em Поворачивает игровое поле против часовой стрелки. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Поворачивает игровое поле против часовой стрелки на 90°. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{2048_8cpp_aa1832bb7ee9fec10919213ff0d5afcfb}{move}} (char dir)
-\begin{DoxyCompactList}\small\item\em Делает ход в заданном направлении. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Выполняет ход в заданном направлении (\textquotesingle{}w\textquotesingle{}, \textquotesingle{}a\textquotesingle{}, \textquotesingle{}s\textquotesingle{}, \textquotesingle{}d\textquotesingle{}). \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{2048_8cpp_af817b0f39eb7ceb54c5298ba6b94c5be}{can\+Move}} ()
-\begin{DoxyCompactList}\small\item\em Проверяет, можно ли совершить ход. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Проверяет, возможно ли совершить хоть один ход. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{2048_8cpp_a285c3f70c3743d8c4d1d64574cbaeccf}{start\+New\+Game}} ()
-\begin{DoxyCompactList}\small\item\em Начинает новую игру\+: сбрасывает поле и счёт, генерирует 2 числа. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Инициализирует новое игровое поле\+: сбрасывает счёт и размещает два числа. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Переменные}
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{2048_8cpp_af3deb41098187a53ec1518351d5eb7df}{board}} \mbox{[}\mbox{\hyperlink{2048_8h_aa7a2b8ea2c784a4ad8b58a3262bb4f07}{BOARD\+\_\+\+SIZE}}\mbox{]}\mbox{[}\mbox{\hyperlink{2048_8h_aa7a2b8ea2c784a4ad8b58a3262bb4f07}{BOARD\+\_\+\+SIZE}}\mbox{]}
 \item 
-int \mbox{\hyperlink{2048_8cpp_aef160b7437d94056f1dc59646cd5b87d}{score}} = 0
+\Hypertarget{2048_8cpp_aef160b7437d94056f1dc59646cd5b87d}\label{2048_8cpp_aef160b7437d94056f1dc59646cd5b87d} 
+int {\bfseries score} = 0
 \begin{DoxyCompactList}\small\item\em Текущий счёт игрока \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{2048_8cpp_ad1d2ebe3608dccbcbdcddae74232eb59}{best\+Score}} = 0
+\Hypertarget{2048_8cpp_ad1d2ebe3608dccbcbdcddae74232eb59}\label{2048_8cpp_ad1d2ebe3608dccbcbdcddae74232eb59} 
+int {\bfseries best\+Score} = 0
 \begin{DoxyCompactList}\small\item\em Лучший сохранённый счёт \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Подробное описание}
-Реализация логики консольной игры 2048. 
+Реализация функций для консольной игры 2048. 
 
-Этот файл содержит функции, управляющие состоянием игры, выводом, движением чисел, генерацией новых блоков, а также сохранением/загрузкой состояния. 
+Содержит определение функций, объявленных в \doxylink{2048_8h}{2048.\+h}. 
 
 \doxysubsection{Функции}
 \Hypertarget{2048_8cpp_af817b0f39eb7ceb54c5298ba6b94c5be}\index{2048.cpp@{2048.cpp}!canMove@{canMove}}
@@ -64,14 +66,25 @@ bool can\+Move (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
-Проверяет, можно ли совершить ход. 
-
-Проверяет, возможно ли совершить хоть один ход.
+Проверяет, возможно ли совершить хоть один ход. 
 
 \begin{DoxyReturn}{Возвращает}
-true, если есть хотя бы один доступный ход. 
+true, если можно сделать ход, иначе false (игра окончена).
 \end{DoxyReturn}
-\Hypertarget{2048_8cpp_a9d7e8af417b6d543da691e9c0e2f6f9f}\index{2048.cpp@{2048.cpp}!clearScreen@{clearScreen}}
+Проверка\+:
+\begin{DoxyItemize}
+\item есть хотя бы одна пустая ячейка
+\item есть соседние одинаковые числа
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{2048_8cpp_af817b0f39eb7ceb54c5298ba6b94c5be}{canMove}}())\ \{}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Game\ Over!"{}};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{2048_8cpp_a9d7e8af417b6d543da691e9c0e2f6f9f}\index{2048.cpp@{2048.cpp}!clearScreen@{clearScreen}}
 \index{clearScreen@{clearScreen}!2048.cpp@{2048.cpp}}
 \doxysubsubsection{\texorpdfstring{clearScreen()}{clearScreen()}}
 {\footnotesize\ttfamily \label{2048_8cpp_a9d7e8af417b6d543da691e9c0e2f6f9f} 
@@ -79,9 +92,14 @@ void clear\+Screen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
-Очищает экран консоли (только Windows). 
+Очищает экран консоли. 
 
-Очищает экран консоли. \Hypertarget{2048_8cpp_a15901c6440641eef370e8e5de6d24cd4}\index{2048.cpp@{2048.cpp}!generateNumber@{generateNumber}}
+Работает через system("{}cls"{}) на Windows. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{2048_8cpp_a9d7e8af417b6d543da691e9c0e2f6f9f}{clearScreen}}();}
+
+\end{DoxyCode}
+ \Hypertarget{2048_8cpp_a15901c6440641eef370e8e5de6d24cd4}\index{2048.cpp@{2048.cpp}!generateNumber@{generateNumber}}
 \index{generateNumber@{generateNumber}!2048.cpp@{2048.cpp}}
 \doxysubsubsection{\texorpdfstring{generateNumber()}{generateNumber()}}
 {\footnotesize\ttfamily \label{2048_8cpp_a15901c6440641eef370e8e5de6d24cd4} 
@@ -89,9 +107,14 @@ void generate\+Number (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
-Генерирует новое число (2 или 4) в случайной пустой ячейке. 
+Добавляет на случайную пустую ячейку число 2 (90\%) или 4 (10\%). 
 
-Добавляет на случайную пустую ячейку число 2 (90\%) или 4 (10\%). \Hypertarget{2048_8cpp_ac77150accff829ce0d3be0031f539bc1}\index{2048.cpp@{2048.cpp}!loadGame@{loadGame}}
+Вызывается в начале игры и после каждого хода. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{2048_8cpp_a15901c6440641eef370e8e5de6d24cd4}{generateNumber}}();}
+
+\end{DoxyCode}
+ \Hypertarget{2048_8cpp_ac77150accff829ce0d3be0031f539bc1}\index{2048.cpp@{2048.cpp}!loadGame@{loadGame}}
 \index{loadGame@{loadGame}!2048.cpp@{2048.cpp}}
 \doxysubsubsection{\texorpdfstring{loadGame()}{loadGame()}}
 {\footnotesize\ttfamily \label{2048_8cpp_ac77150accff829ce0d3be0031f539bc1} 
@@ -99,14 +122,19 @@ bool load\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
-Загружает состояние игры из файлов. 
-
-Загружает сохранённое состояние игры из файла.
+Загружает сохранённое состояние игры из файла. 
 
 \begin{DoxyReturn}{Возвращает}
-true если загрузка прошла успешно, иначе false. 
+true, если удалось загрузить, иначе false.
 \end{DoxyReturn}
-\Hypertarget{2048_8cpp_aa1832bb7ee9fec10919213ff0d5afcfb}\index{2048.cpp@{2048.cpp}!move@{move}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{2048_8cpp_ac77150accff829ce0d3be0031f539bc1}{loadGame}}())\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{2048_8cpp_a285c3f70c3743d8c4d1d64574cbaeccf}{startNewGame}}();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{2048_8cpp_aa1832bb7ee9fec10919213ff0d5afcfb}\index{2048.cpp@{2048.cpp}!move@{move}}
 \index{move@{move}!2048.cpp@{2048.cpp}}
 \doxysubsubsection{\texorpdfstring{move()}{move()}}
 {\footnotesize\ttfamily \label{2048_8cpp_aa1832bb7ee9fec10919213ff0d5afcfb} 
@@ -114,19 +142,25 @@ bool move (\begin{DoxyParamCaption}\item[{char}]{dir}{}\end{DoxyParamCaption})}
 
 
 
-Делает ход в заданном направлении. 
-
-Выполняет ход в заданном направлении (\textquotesingle{}w\textquotesingle{}, \textquotesingle{}a\textquotesingle{}, \textquotesingle{}s\textquotesingle{}, \textquotesingle{}d\textquotesingle{}).
+Выполняет ход в заданном направлении (\textquotesingle{}w\textquotesingle{}, \textquotesingle{}a\textquotesingle{}, \textquotesingle{}s\textquotesingle{}, \textquotesingle{}d\textquotesingle{}). 
 
 
 \begin{DoxyParams}{Аргументы}
-{\em dir} & Символ направления\+: \textquotesingle{}w\textquotesingle{} (вверх), \textquotesingle{}a\textquotesingle{} (влево), \textquotesingle{}s\textquotesingle{} (вниз), \textquotesingle{}d\textquotesingle{} (вправо) \\
+{\em dir} & — символ направления\+: W (вверх), A (влево), S (вниз), D (вправо) \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Возвращает}
-true, если поле изменилось после хода. 
+true, если поле изменилось после хода.
 \end{DoxyReturn}
-\Hypertarget{2048_8cpp_aac4bcbfa17105059389c38d53c332acf}\index{2048.cpp@{2048.cpp}!moveLeft@{moveLeft}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (\mbox{\hyperlink{2048_8cpp_aa1832bb7ee9fec10919213ff0d5afcfb}{move}}(\textcolor{charliteral}{'a'}))\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{2048_8cpp_a15901c6440641eef370e8e5de6d24cd4}{generateNumber}}();}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{2048_8cpp_ac42f6d85eb40dfdfadbf9933d885b4c1}{saveGame}}();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{2048_8cpp_aac4bcbfa17105059389c38d53c332acf}\index{2048.cpp@{2048.cpp}!moveLeft@{moveLeft}}
 \index{moveLeft@{moveLeft}!2048.cpp@{2048.cpp}}
 \doxysubsubsection{\texorpdfstring{moveLeft()}{moveLeft()}}
 {\footnotesize\ttfamily \label{2048_8cpp_aac4bcbfa17105059389c38d53c332acf} 
@@ -134,14 +168,18 @@ bool move\+Left (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
-Выполняет сдвиг и слияние ячеек влево. 
-
-Двигает и объединяет ячейки влево согласно правилам 2048.
+Двигает и объединяет ячейки влево согласно правилам 2048. 
 
 \begin{DoxyReturn}{Возвращает}
-true, если поле изменилось, иначе false. 
+true, если поле изменилось, иначе false.
 \end{DoxyReturn}
-\Hypertarget{2048_8cpp_a8310d6d1e915cb179f834d9ca017950a}\index{2048.cpp@{2048.cpp}!printBoard@{printBoard}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{2048_8cpp_af3deb41098187a53ec1518351d5eb7df}{board}}[0]\ =\ \{2,\ 2,\ 0,\ 0\};}
+\DoxyCodeLine{\mbox{\hyperlink{2048_8cpp_aac4bcbfa17105059389c38d53c332acf}{moveLeft}}();}
+
+\end{DoxyCode}
+ \Hypertarget{2048_8cpp_a8310d6d1e915cb179f834d9ca017950a}\index{2048.cpp@{2048.cpp}!printBoard@{printBoard}}
 \index{printBoard@{printBoard}!2048.cpp@{2048.cpp}}
 \doxysubsubsection{\texorpdfstring{printBoard()}{printBoard()}}
 {\footnotesize\ttfamily \label{2048_8cpp_a8310d6d1e915cb179f834d9ca017950a} 
@@ -149,9 +187,14 @@ void print\+Board (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
-Печатает текущее игровое поле и счёт на экран. 
+Выводит игровое поле в консоль с текущим и лучшим счётом. 
 
-Выводит игровое поле в консоль с текущим и лучшим счётом. \Hypertarget{2048_8cpp_ad459b0c12009486f978b50d8571c5c91}\index{2048.cpp@{2048.cpp}!rotateBoardClockwise@{rotateBoardClockwise}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{2048_8cpp_a8310d6d1e915cb179f834d9ca017950a}{printBoard}}();}
+
+\end{DoxyCode}
+ \Hypertarget{2048_8cpp_ad459b0c12009486f978b50d8571c5c91}\index{2048.cpp@{2048.cpp}!rotateBoardClockwise@{rotateBoardClockwise}}
 \index{rotateBoardClockwise@{rotateBoardClockwise}!2048.cpp@{2048.cpp}}
 \doxysubsubsection{\texorpdfstring{rotateBoardClockwise()}{rotateBoardClockwise()}}
 {\footnotesize\ttfamily \label{2048_8cpp_ad459b0c12009486f978b50d8571c5c91} 
@@ -159,9 +202,16 @@ void rotate\+Board\+Clockwise (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption
 
 
 
-Поворачивает игровое поле по часовой стрелке. 
+Поворачивает игровое поле по часовой стрелке на 90°. 
 
-Поворачивает игровое поле по часовой стрелке на 90°. \Hypertarget{2048_8cpp_a868ecd23e8388f38f6ac096184847aa1}\index{2048.cpp@{2048.cpp}!rotateBoardCounterClockwise@{rotateBoardCounterClockwise}}
+Используется для реализации движения вверх и вправо через \doxylink{2048_8h_aac4bcbfa17105059389c38d53c332acf}{move\+Left()}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{2048_8cpp_ad459b0c12009486f978b50d8571c5c91}{rotateBoardClockwise}}();}
+
+\end{DoxyCode}
+ \Hypertarget{2048_8cpp_a868ecd23e8388f38f6ac096184847aa1}\index{2048.cpp@{2048.cpp}!rotateBoardCounterClockwise@{rotateBoardCounterClockwise}}
 \index{rotateBoardCounterClockwise@{rotateBoardCounterClockwise}!2048.cpp@{2048.cpp}}
 \doxysubsubsection{\texorpdfstring{rotateBoardCounterClockwise()}{rotateBoardCounterClockwise()}}
 {\footnotesize\ttfamily \label{2048_8cpp_a868ecd23e8388f38f6ac096184847aa1} 
@@ -169,9 +219,16 @@ void rotate\+Board\+Counter\+Clockwise (\begin{DoxyParamCaption}{}{}\end{DoxyPar
 
 
 
-Поворачивает игровое поле против часовой стрелки. 
+Поворачивает игровое поле против часовой стрелки на 90°. 
 
-Поворачивает игровое поле против часовой стрелки на 90°. \Hypertarget{2048_8cpp_ac42f6d85eb40dfdfadbf9933d885b4c1}\index{2048.cpp@{2048.cpp}!saveGame@{saveGame}}
+Используется для реализации движения вверх и вниз через \doxylink{2048_8h_aac4bcbfa17105059389c38d53c332acf}{move\+Left()}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{2048_8cpp_a868ecd23e8388f38f6ac096184847aa1}{rotateBoardCounterClockwise}}();}
+
+\end{DoxyCode}
+ \Hypertarget{2048_8cpp_ac42f6d85eb40dfdfadbf9933d885b4c1}\index{2048.cpp@{2048.cpp}!saveGame@{saveGame}}
 \index{saveGame@{saveGame}!2048.cpp@{2048.cpp}}
 \doxysubsubsection{\texorpdfstring{saveGame()}{saveGame()}}
 {\footnotesize\ttfamily \label{2048_8cpp_ac42f6d85eb40dfdfadbf9933d885b4c1} 
@@ -179,9 +236,14 @@ void save\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
-Сохраняет текущее состояние игры и лучший счёт в файлы. 
+Сохраняет текущее состояние игры и лучший счёт в файл. 
 
-Сохраняет текущее состояние игры и лучший счёт в файл. \Hypertarget{2048_8cpp_a285c3f70c3743d8c4d1d64574cbaeccf}\index{2048.cpp@{2048.cpp}!startNewGame@{startNewGame}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{2048_8cpp_ac42f6d85eb40dfdfadbf9933d885b4c1}{saveGame}}();}
+
+\end{DoxyCode}
+ \Hypertarget{2048_8cpp_a285c3f70c3743d8c4d1d64574cbaeccf}\index{2048.cpp@{2048.cpp}!startNewGame@{startNewGame}}
 \index{startNewGame@{startNewGame}!2048.cpp@{2048.cpp}}
 \doxysubsubsection{\texorpdfstring{startNewGame()}{startNewGame()}}
 {\footnotesize\ttfamily \label{2048_8cpp_a285c3f70c3743d8c4d1d64574cbaeccf} 
@@ -189,35 +251,20 @@ void start\+New\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
-Начинает новую игру\+: сбрасывает поле и счёт, генерирует 2 числа. 
-
 Инициализирует новое игровое поле\+: сбрасывает счёт и размещает два числа. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{2048_8cpp_a285c3f70c3743d8c4d1d64574cbaeccf}{startNewGame}}();}
+
+\end{DoxyCode}
+ 
+
 \doxysubsection{Переменные}
-\Hypertarget{2048_8cpp_ad1d2ebe3608dccbcbdcddae74232eb59}\index{2048.cpp@{2048.cpp}!bestScore@{bestScore}}
-\index{bestScore@{bestScore}!2048.cpp@{2048.cpp}}
-\doxysubsubsection{\texorpdfstring{bestScore}{bestScore}}
-{\footnotesize\ttfamily \label{2048_8cpp_ad1d2ebe3608dccbcbdcddae74232eb59} 
-int best\+Score = 0}
-
-
-
-Лучший сохранённый счёт 
-
-Лучший достигнутый счёт (загружается/сохраняется отдельно) \Hypertarget{2048_8cpp_af3deb41098187a53ec1518351d5eb7df}\index{2048.cpp@{2048.cpp}!board@{board}}
+\Hypertarget{2048_8cpp_af3deb41098187a53ec1518351d5eb7df}\index{2048.cpp@{2048.cpp}!board@{board}}
 \index{board@{board}!2048.cpp@{2048.cpp}}
 \doxysubsubsection{\texorpdfstring{board}{board}}
 {\footnotesize\ttfamily \label{2048_8cpp_af3deb41098187a53ec1518351d5eb7df} 
 int board\mbox{[}\mbox{\hyperlink{2048_8h_aa7a2b8ea2c784a4ad8b58a3262bb4f07}{BOARD\+\_\+\+SIZE}}\mbox{]}\mbox{[}\mbox{\hyperlink{2048_8h_aa7a2b8ea2c784a4ad8b58a3262bb4f07}{BOARD\+\_\+\+SIZE}}\mbox{]}}
 
-Игровое поле размером 4x4, содержащее значения (0 — пустая клетка, остальное — степени двойки) \Hypertarget{2048_8cpp_aef160b7437d94056f1dc59646cd5b87d}\index{2048.cpp@{2048.cpp}!score@{score}}
-\index{score@{score}!2048.cpp@{2048.cpp}}
-\doxysubsubsection{\texorpdfstring{score}{score}}
-{\footnotesize\ttfamily \label{2048_8cpp_aef160b7437d94056f1dc59646cd5b87d} 
-int score = 0}
-
-
-
-Текущий счёт игрока 
-
-Текущий счёт игрока 
+Глобальный массив игрового поля Значения\+: степени двойки (2, 4, 8...) или 0 для пустых ячеек 
