@@ -1,9 +1,8 @@
 /**
  * @file 2048.cpp
- * @brief Реализация логики консольной игры 2048.
+ * @brief Реализация функций для консольной игры 2048.
  *
- * Этот файл содержит функции, управляющие состоянием игры, выводом, 
- * движением чисел, генерацией новых блоков, а также сохранением/загрузкой состояния.
+ * Содержит определение функций, объявленных в 2048.h.
  */
 
 #include "2048.h"
@@ -17,22 +16,10 @@
 #include <algorithm>
 #include <random>
 
-/// @var board
-/// Игровое поле размером 4x4, содержащее значения (0 — пустая клетка, остальное — степени двойки)
 int board[BOARD_SIZE][BOARD_SIZE];
-
-/// @var score
-/// Текущий счёт игрока
 int score = 0;
-
-/// @var bestScore
-/// Лучший достигнутый счёт (загружается/сохраняется отдельно)
 int bestScore = 0;
 
-/**
- * @brief Загружает состояние игры из файлов.
- * @return true если загрузка прошла успешно, иначе false.
- */
 bool loadGame() {
     std::ifstream in("savegame.txt");
     if (!in.is_open()) return false;
@@ -53,9 +40,6 @@ bool loadGame() {
     return true;
 }
 
-/**
- * @brief Сохраняет текущее состояние игры и лучший счёт в файлы.
- */
 void saveGame() {
     std::ofstream out("savegame.txt");
     for (int i = 0; i < BOARD_SIZE; ++i) {
@@ -74,16 +58,10 @@ void saveGame() {
     }
 }
 
-/**
- * @brief Очищает экран консоли (только Windows).
- */
 void clearScreen() {
     std::system("cls");
 }
 
-/**
- * @brief Печатает текущее игровое поле и счёт на экран.
- */
 void printBoard() {
     clearScreen();
     std::cout << "Score: " << score << "  Best: " << bestScore << "\n\n";
@@ -94,9 +72,6 @@ void printBoard() {
     }
 }
 
-/**
- * @brief Генерирует новое число (2 или 4) в случайной пустой ячейке.
- */
 void generateNumber() {
     std::vector<std::pair<int, int>> empty;
     for (int i = 0; i < BOARD_SIZE; ++i)
@@ -113,10 +88,6 @@ void generateNumber() {
     }
 }
 
-/**
- * @brief Выполняет сдвиг и слияние ячеек влево.
- * @return true, если поле изменилось, иначе false.
- */
 bool moveLeft() {
     bool moved = false;
     for (int i = 0; i < BOARD_SIZE; ++i) {
@@ -142,9 +113,6 @@ bool moveLeft() {
     return moved;
 }
 
-/**
- * @brief Поворачивает игровое поле по часовой стрелке.
- */
 void rotateBoardClockwise() {
     int tmp[BOARD_SIZE][BOARD_SIZE];
     for (int i = 0; i < BOARD_SIZE; ++i)
@@ -153,9 +121,6 @@ void rotateBoardClockwise() {
     std::copy(&tmp[0][0], &tmp[0][0] + BOARD_SIZE * BOARD_SIZE, &board[0][0]);
 }
 
-/**
- * @brief Поворачивает игровое поле против часовой стрелки.
- */
 void rotateBoardCounterClockwise() {
     int tmp[BOARD_SIZE][BOARD_SIZE];
     for (int i = 0; i < BOARD_SIZE; ++i)
@@ -164,11 +129,6 @@ void rotateBoardCounterClockwise() {
     std::copy(&tmp[0][0], &tmp[0][0] + BOARD_SIZE * BOARD_SIZE, &board[0][0]);
 }
 
-/**
- * @brief Делает ход в заданном направлении.
- * @param dir Символ направления: 'w' (вверх), 'a' (влево), 's' (вниз), 'd' (вправо)
- * @return true, если поле изменилось после хода.
- */
 bool move(char dir) {
     bool moved = false;
     switch (dir) {
@@ -196,10 +156,6 @@ bool move(char dir) {
     return moved;
 }
 
-/**
- * @brief Проверяет, можно ли совершить ход.
- * @return true, если есть хотя бы один доступный ход.
- */
 bool canMove() {
     for (int i = 0; i < BOARD_SIZE; ++i)
         for (int j = 0; j < BOARD_SIZE; ++j) {
@@ -213,9 +169,6 @@ bool canMove() {
     return false;
 }
 
-/**
- * @brief Начинает новую игру: сбрасывает поле и счёт, генерирует 2 числа.
- */
 void startNewGame() {
     score = 0;
     for (int i = 0; i < BOARD_SIZE; ++i)

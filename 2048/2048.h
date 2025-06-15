@@ -38,7 +38,7 @@ bool loadGame();
 /// @brief Сохраняет текущее состояние игры и лучший счёт в файл.
 ///
 /// @code
-/// saveGame();  // сохранить поле и счёт
+/// saveGame();
 /// @endcode
 void saveGame();
 
@@ -70,7 +70,7 @@ void generateNumber();
 ///
 /// @code
 /// board[0] = {2, 2, 0, 0};
-/// moveLeft();  // board[0] -> {4, 0, 0, 0}, score += 4
+/// moveLeft();
 /// @endcode
 bool moveLeft();
 

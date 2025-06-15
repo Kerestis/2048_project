@@ -30,7 +30,7 @@ TEST_CASE("Board rotation clockwise and counterclockwise") {
     rotateBoardClockwise();
     rotateBoardCounterClockwise();
 
-    CHECK_EQ(0, std::memcmp(board, original, sizeof(board))); // Поле должно вернуться в исходное состояние
+    CHECK(std::equal(&board[0][0], &board[0][0] + BOARD_SIZE * BOARD_SIZE, &original[0][0]));  // Поле должно вернуться в исходное состояние
 }
 
 TEST_CASE("Moving left combines tiles correctly") {
