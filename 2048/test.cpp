@@ -2,7 +2,7 @@
 #include "doctest.h"
 #include "2048.h"
 
-TEST_CASE("New game initializes correctly") {
+TEST_CASE("1") {
     startNewGame();
 
     int nonZeroCount = 0;
@@ -11,14 +11,13 @@ TEST_CASE("New game initializes correctly") {
             if (board[i][j] != 0)
                 ++nonZeroCount;
 
-    CHECK(nonZeroCount == 2); // Должно быть 2 стартовых числа
+    CHECK(nonZeroCount == 2);
     CHECK(score == 0);
 }
 
-TEST_CASE("Board rotation clockwise and counterclockwise") {
+TEST_CASE("2") {
     startNewGame();
 
-    // Заполним поле предсказуемыми значениями
     int value = 1;
     for (int i = 0; i < BOARD_SIZE; ++i)
         for (int j = 0; j < BOARD_SIZE; ++j)
@@ -30,10 +29,10 @@ TEST_CASE("Board rotation clockwise and counterclockwise") {
     rotateBoardClockwise();
     rotateBoardCounterClockwise();
 
-    CHECK(std::equal(&board[0][0], &board[0][0] + BOARD_SIZE * BOARD_SIZE, &original[0][0]));  // Поле должно вернуться в исходное состояние
+    CHECK(std::equal(&board[0][0], &board[0][0] + BOARD_SIZE * BOARD_SIZE, &original[0][0]));
 }
 
-TEST_CASE("Moving left combines tiles correctly") {
+TEST_CASE("3") {
     for (int i = 0; i < BOARD_SIZE; ++i)
         std::fill(board[i], board[i] + BOARD_SIZE, 0);
 
@@ -49,7 +48,7 @@ TEST_CASE("Moving left combines tiles correctly") {
     CHECK(score == 4);
 }
 
-TEST_CASE("No move possible when board is full and no merges") {
+TEST_CASE("4") {
     int val = 2;
     for (int i = 0; i < BOARD_SIZE; ++i)
         for (int j = 0; j < BOARD_SIZE; ++j)
@@ -58,7 +57,7 @@ TEST_CASE("No move possible when board is full and no merges") {
     CHECK(canMove() == false);
 }
 
-TEST_CASE("Move adds new number to the board") {
+TEST_CASE("5") {
     startNewGame();
     int before = 0;
     for (int i = 0; i < BOARD_SIZE; ++i)
@@ -75,5 +74,5 @@ TEST_CASE("Move adds new number to the board") {
             if (board[i][j] != 0)
                 ++after;
 
-    CHECK(after >= before); // Должно быть больше или равно (если ход не прошёл)
+    CHECK(after >= before);
 }
