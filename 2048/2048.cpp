@@ -113,47 +113,89 @@ bool moveLeft() {
     return moved;
 }
 
-void rotateBoardClockwise() {
-    int tmp[BOARD_SIZE][BOARD_SIZE];
-    for (int i = 0; i < BOARD_SIZE; ++i)
-        for (int j = 0; j < BOARD_SIZE; ++j)
-            tmp[i][j] = board[BOARD_SIZE - j - 1][i];
-    std::copy(&tmp[0][0], &tmp[0][0] + BOARD_SIZE * BOARD_SIZE, &board[0][0]);
+bool moveRight() {
+    bool moved = false;
+    for (int i = 0; i < BOARD_SIZE; ++i) {
+        int temp[BOARD_SIZE] = {};
+        int idx = BOARD_SIZE - 1;
+        for (int j = BOARD_SIZE - 1; j >= 0; --j) {
+            if (board[i][j] == 0) continue;
+            if (temp[idx] == 0) {
+                temp[idx] = board[i][j];
+            } else if (temp[idx] == board[i][j]) {
+                temp[idx--] *= 2;
+                score += temp[idx + 1];
+            } else {
+                if (--idx >= 0)
+                    temp[idx] = board[i][j];
+            }
+        }
+        for (int j = 0; j < BOARD_SIZE; ++j) {
+            if (board[i][j] != temp[j]) moved = true;
+            board[i][j] = temp[j];
+        }
+    }
+    return moved;
 }
 
-void rotateBoardCounterClockwise() {
-    int tmp[BOARD_SIZE][BOARD_SIZE];
-    for (int i = 0; i < BOARD_SIZE; ++i)
-        for (int j = 0; j < BOARD_SIZE; ++j)
-            tmp[i][j] = board[j][BOARD_SIZE - i - 1];
-    std::copy(&tmp[0][0], &tmp[0][0] + BOARD_SIZE * BOARD_SIZE, &board[0][0]);
+bool moveUp() {
+    bool moved = false;
+    for (int j = 0; j < BOARD_SIZE; ++j) {
+        int temp[BOARD_SIZE] = {};
+        int idx = 0;
+        for (int i = 0; i < BOARD_SIZE; ++i) {
+            if (board[i][j] == 0) continue;
+            if (temp[idx] == 0) {
+                temp[idx] = board[i][j];
+            } else if (temp[idx] == board[i][j]) {
+                temp[idx++] *= 2;
+                score += temp[idx - 1];
+            } else {
+                if (++idx < BOARD_SIZE)
+                    temp[idx] = board[i][j];
+            }
+        }
+        for (int i = 0; i < BOARD_SIZE; ++i) {
+            if (board[i][j] != temp[i]) moved = true;
+            board[i][j] = temp[i];
+        }
+    }
+    return moved;
+}
+
+bool moveDown() {
+    bool moved = false;
+    for (int j = 0; j < BOARD_SIZE; ++j) {
+        int temp[BOARD_SIZE] = {};
+        int idx = BOARD_SIZE - 1;
+        for (int i = BOARD_SIZE - 1; i >= 0; --i) {
+            if (board[i][j] == 0) continue;
+            if (temp[idx] == 0) {
+                temp[idx] = board[i][j];
+            } else if (temp[idx] == board[i][j]) {
+                temp[idx--] *= 2;
+                score += temp[idx + 1];
+            } else {
+                if (--idx >= 0)
+                    temp[idx] = board[i][j];
+            }
+        }
+        for (int i = 0; i < BOARD_SIZE; ++i) {
+            if (board[i][j] != temp[i]) moved = true;
+            board[i][j] = temp[i];
+        }
+    }
+    return moved;
 }
 
 bool move(char dir) {
-    bool moved = false;
     switch (dir) {
-        case 'a':
-            moved = moveLeft();
-            break;
-        case 'd':
-            rotateBoardClockwise();
-            rotateBoardClockwise();
-            moved = moveLeft();
-            rotateBoardClockwise();
-            rotateBoardClockwise();
-            break;
-        case 'w':
-            rotateBoardCounterClockwise();
-            moved = moveLeft();
-            rotateBoardClockwise();
-            break;
-        case 's':
-            rotateBoardClockwise();
-            moved = moveLeft();
-            rotateBoardCounterClockwise();
-            break;
+        case 'a': return moveLeft();
+        case 'd': return moveRight();
+        case 'w': return moveUp();
+        case 's': return moveDown();
     }
-    return moved;
+    return false;
 }
 
 bool canMove() {

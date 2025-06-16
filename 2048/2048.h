@@ -12,117 +12,171 @@
 
 #include <string>
 
-/// Размер игрового поля (4x4)
+/**
+ * @brief Размер игрового поля (4x4).
+ * @type int
+ */
 const int BOARD_SIZE = 4;
 
-/// Глобальный массив игрового поля
-/// Значения: степени двойки (2, 4, 8...) или 0 для пустых ячеек
+/**
+ * @brief Игровое поле.
+ * @type int[BOARD_SIZE][BOARD_SIZE]
+ * Значения: степени двойки (2, 4, 8...) или 0 для пустых ячеек
+ */
 extern int board[BOARD_SIZE][BOARD_SIZE];
 
-/// Текущий счёт игрока
+/**
+ * @brief Текущий счёт игрока.
+ * @type int
+ */
 extern int score;
 
-/// Лучший сохранённый счёт
+/**
+ * @brief Лучший сохранённый счёт.
+ * @type int
+ */
 extern int bestScore;
 
-/// @brief Загружает сохранённое состояние игры из файла.
-/// @return true, если удалось загрузить, иначе false.
-///
-/// @code
-/// if (!loadGame()) {
-///     startNewGame();
-/// }
-/// @endcode
+/**
+ * @brief Загружает сохранённое состояние игры из файла.
+ * @return bool true, если удалось загрузить, иначе false.
+ *
+ * @code
+ * if (!loadGame()) {
+ *     startNewGame();
+ * }
+ * @endcode
+ */
 bool loadGame();
 
-/// @brief Сохраняет текущее состояние игры и лучший счёт в файл.
-///
-/// @code
-/// saveGame();
-/// @endcode
+/**
+ * @brief Сохраняет текущее состояние игры и лучший счёт в файл.
+ * @return void
+ *
+ * @code
+ * saveGame();
+ * @endcode
+ */
 void saveGame();
 
-/// @brief Очищает экран консоли.
-///
-/// Работает через system("cls") на Windows.
-/// @code
-/// clearScreen();
-/// @endcode
+/**
+ * @brief Очищает экран консоли.
+ * @return void
+ *
+ * Работает через system("cls") на Windows.
+ *
+ * @code
+ * clearScreen();
+ * @endcode
+ */
 void clearScreen();
 
-/// @brief Выводит игровое поле в консоль с текущим и лучшим счётом.
-///
-/// @code
-/// printBoard();
-/// @endcode
+/**
+ * @brief Выводит игровое поле в консоль с текущим и лучшим счётом.
+ * @return void
+ *
+ * @code
+ * printBoard();
+ * @endcode
+ */
 void printBoard();
 
-/// @brief Добавляет на случайную пустую ячейку число 2 (90%) или 4 (10%).
-///
-/// Вызывается в начале игры и после каждого хода.
-/// @code
-/// generateNumber();
-/// @endcode
+/**
+ * @brief Добавляет на случайную пустую ячейку число 2 (90%) или 4 (10%).
+ * @return void
+ *
+ * Вызывается в начале игры и после каждого хода.
+ *
+ * @code
+ * generateNumber();
+ * @endcode
+ */
 void generateNumber();
 
-/// @brief Двигает и объединяет ячейки влево согласно правилам 2048.
-/// @return true, если поле изменилось, иначе false.
-///
-/// @code
-/// board[0] = {2, 2, 0, 0};
-/// moveLeft();
-/// @endcode
+/**
+ * @brief Двигает и объединяет ячейки влево согласно правилам 2048.
+ * @return bool true, если поле изменилось, иначе false.
+ *
+ * @code
+ * board[0] = {2, 2, 0, 0};
+ * moveLeft();
+ * @endcode
+ */
 bool moveLeft();
 
-/// @brief Поворачивает игровое поле по часовой стрелке на 90°.
-///
-/// Используется для реализации движения вверх и вправо через moveLeft().
-///
-/// @code
-/// rotateBoardClockwise();
-/// @endcode
-void rotateBoardClockwise();
+/**
+ * @brief Двигает и объединяет ячейки вправо согласно правилам 2048.
+ * @return bool true, если поле изменилось, иначе false.
+ *
+ * @code
+ * board[0] = {0, 0, 2, 2};
+ * moveRight(); // board[0] -> {0, 0, 0, 4}, score += 4
+ * @endcode
+ */
+bool moveRight();
 
-/// @brief Поворачивает игровое поле против часовой стрелки на 90°.
-///
-/// Используется для реализации движения вверх и вниз через moveLeft().
-///
-/// @code
-/// rotateBoardCounterClockwise();
-/// @endcode
-void rotateBoardCounterClockwise();
+/**
+ * @brief Двигает и объединяет ячейки вверх согласно правилам 2048.
+ * @return bool true, если поле изменилось, иначе false.
+ *
+ * @code
+ * // Пример для первого столбца: {2, 2, 0, 0} -> {4, 0, 0, 0}, score += 4
+ * moveUp();
+ * @endcode
+ */
+bool moveUp();
 
-/// @brief Выполняет ход в заданном направлении ('w', 'a', 's', 'd').
-/// @param dir — символ направления: W (вверх), A (влево), S (вниз), D (вправо)
-/// @return true, если поле изменилось после хода.
-///
-/// @code
-/// if (move('a')) {
-///     generateNumber();
-///     saveGame();
-/// }
-/// @endcode
+/**
+ * @brief Двигает и объединяет ячейки вниз согласно правилам 2048.
+ * @return bool true, если поле изменилось, иначе false.
+ *
+ * @code
+ * // Пример для первого столбца: {0, 0, 2, 2} -> {0, 0, 0, 4}, score += 4
+ * moveDown();
+ * @endcode
+ */
+bool moveDown();
+
+/**
+ * @brief Выполняет ход в заданном направлении.
+ * @param dir Символ направления: 'w' (вверх), 'a' (влево), 's' (вниз), 'd' (вправо)
+ * @type char
+ * @return bool true, если поле изменилось после хода.
+ *
+ * @code
+ * if (move('a')) {
+ *     generateNumber();
+ *     saveGame();
+ * }
+ * @endcode
+ */
 bool move(char dir);
 
-/// @brief Проверяет, возможно ли совершить хоть один ход.
-/// @return true, если можно сделать ход, иначе false (игра окончена).
-///
-/// Проверка:
-/// - есть хотя бы одна пустая ячейка
-/// - есть соседние одинаковые числа
-///
-/// @code
-/// if (!canMove()) {
-///     std::cout << "Game Over!";
-/// }
-/// @endcode
+/**
+ * @brief Проверяет, возможно ли совершить хоть один ход.
+ * @return bool true, если можно сделать ход, иначе false (игра окончена).
+ *
+ * Проверка:
+ * - есть хотя бы одна пустая ячейка
+ * - есть соседние одинаковые числа
+ *
+ * @code
+ * if (!canMove()) {
+ *     std::cout << "Game Over!";
+ * }
+ * @endcode
+ */
 bool canMove();
 
-/// @brief Инициализирует новое игровое поле: сбрасывает счёт и размещает два числа.
-///
-/// @code
-/// startNewGame();
-/// @endcode
+/**
+ * @brief Инициализирует новое игровое поле: сбрасывает счёт и размещает два числа.
+ * @return void
+ *
+ * @code
+ * startNewGame();
+ * @endcode
+ */
 void startNewGame();
 
-#endif // GAME_2048_H
+#endif
+
